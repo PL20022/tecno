@@ -212,7 +212,7 @@
         // Função para incrementar o número de pessoas assistindo
         function incrementWatchingCount() {
             const watchingElement = document.getElementById("watching-now");
-            const increment = getRandomInt(17, 13, 4);  // Gera um incremento aleatório entre 1 e 5
+            const increment = getRandomInt(17,13,4);  // Gera um incremento aleatório entre 1 e 5
             currentCount += increment;  // Incrementa o contador
             watchingElement.textContent = currentCount;
         }
@@ -222,7 +222,19 @@
 
         // Inicializa o contador imediatamente ao carregar a página
         incrementWatchingCount();
+   
+</script>
+ <script>
+        // Função para mostrar o contador de visualizações
+        function showWatchingCounter() {
+            const watchingCounter = document.querySelector('.watching-counter');
+            watchingCounter.style.display = 'block';  // Mostra o contador
+            document.getElementById('watching-now').textContent = '100';  // Exemplo de número de pessoas assistindo
+        }
 
+        // Temporizador para mostrar o contador após 9 minutos (540000 milissegundos)
+        setTimeout(showWatchingCounter, 470000);
+    </script>
     </script>
 </body>
 
