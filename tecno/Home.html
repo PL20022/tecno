@@ -206,24 +206,10 @@
         }
 
 
-        @keyframes bounce {
-
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -60%);
-                font-size: 30px;
-            }
-
-            50% {
-                opacity: 1;
-                font-size: 60px;
-            }
-
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -60%);
-                font-size: 30px;
-            }
+          @keyframes rewardAnimation {
+            0% { opacity: 0; transform: translate(-50%, -60%); font-size: 30px; }
+            50% { opacity: 1; font-size: 60px; }
+            100% { opacity: 0; transform: translate(-50%, -40%); font-size: 30px; }
         }
 
         .message {
