@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia Secreta</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .div-card {
+            display: flex;
+            gap: 100px;
+            justify-content: space-between;
+            flex-direction: wrap;
+            text-align: center;
+            align-items: center;
+
+
+        }
+
+        .wallet {
+            background-color: #28a745;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+            white-space: nowrap;
+          font-weight: 700;
+        }
+
+        .item1 {
+            
+            font-size: 20px;
+        }
+
+
+        @media (max-width: 768px) {
+            .div-card {
+                display: flex;
+                gap: 10px;
+            }
+
+            .wallet {
+                font-weight: 700;
+                font-size: 12px;
+                width: auto;
+                height: auto;
+            }
+
+            .item1 {
+   
+   font-size: 16px !important;
+}
+        }
+
+        @media (max-width: 480px) {
+            .wallet {
+                font-weight: 700;
+                font-size: 11px;
+                width: auto;
+                height: auto;
+            }
+
+            .item1 {
+   
+                font-size: 12px !important;
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #000;
+            color: #222020;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            z-index: 1000;
+            font-family: Roboto, sans-serif
+        }
+
+        footer a {
+            color: #222020;
+        }
+
+        .card-video {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            padding: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div-card">
+
+        <div class="item1"
+            style="color: white; padding: 10px; font-size: 20px; text-align: center; font-weight: bold; margin-left: 10px;">
+            Esse vídeo sairá do ar em: <span id="countdown" style="color: orange;"></span>
+        </div>
+        <div class="wallet ">Saldo R$<span id="walletAmount">0</span></div>
+
+    </div>
+    <div class="card-video">
+        <div id="vid_6549ef4b942d88000a27f0fd" style="position:relative;width:100%;padding: 56.25% 0 0;"><img
+                id="thumb_6549ef4b942d88000a27f0fd"
+                src="https://images.converteai.net/f1212f91-0870-4ed5-998a-3a360384a2e6/players/6549ef4b942d88000a27f0fd/thumbnail.jpg"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <div id="backdrop_6549ef4b942d88000a27f0fd"
+                style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);">
+            </div>
+        </div>
+        <script type="text/javascript"
+            id="scr_6549ef4b942d88000a27f0fd">var s = document.createElement("script"); s.src = "https://scripts.converteai.net/f1212f91-0870-4ed5-998a-3a360384a2e6/players/6549ef4b942d88000a27f0fd/player.js", s.async = !0, document.head.appendChild(s);</script>
+    </div>
+
+    <footer>
+        <p>Todos os direitos reservados. <br>
+            Termos de uso | Política de privacidade
+        </p>
+
+    </footer>
+
+    <script>
+        const walletAmountElement = document.getElementById("walletAmount");
+
+        // Define o valor final desejado (R$ 117)
+        const targetAmount = 117;
+
+        // Define a velocidade com que o saldo aumenta (em centavos por iteração)
+        const incrementSpeed = 10;
+
+        // Função para animar o aumento do saldo até atingir o valor desejado
+        function increaseWalletAmount() {
+            // Obtém o valor atual do saldo (em centavos)
+            let currentAmount = parseFloat(walletAmountElement.innerText);
+
+            // Se o valor atual for menor que o valor desejado, aumenta rapidamente
+            if (currentAmount < targetAmount) {
+                // Calcula o próximo valor do saldo após a iteração
+                let nextAmount = currentAmount + incrementSpeed;
+
+                // Atualiza o elemento de saldo com o próximo valor (em reais)
+                walletAmountElement.innerText = nextAmount.toFixed(2);
+
+                // Chama a função novamente após um pequeno intervalo para criar a animação
+                setTimeout(increaseWalletAmount, 50); // Ajuste o intervalo para controlar a velocidade da animação
+            } else {
+                // Se o valor desejado for alcançado, define o saldo como R$ 117
+                walletAmountElement.innerText = targetAmount.toFixed(2);
+            }
+        }
+
+        // Chama a função para iniciar o efeito de aumento do saldo
+        increaseWalletAmount();
+
+        var countDownDate = new Date().getTime() + 50 * 60 * 1000;
+
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            var countdownElement = document.getElementById("countdown");
+            countdownElement.innerHTML = minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                countdownElement.innerHTML = "EXPIRED";
+            }
+        }, 1000);
+
+        // Variável para armazenar o número atual de pessoas assistindo
+        let currentCount = 1136;
+
+        // Função para gerar um número aleatório entre min e max
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Função para incrementar o número de pessoas assistindo
+        function incrementWatchingCount() {
+            const watchingElement = document.getElementById("watching-now");
+            const increment = getRandomInt(17, 13, 4);  // Gera um incremento aleatório entre 1 e 5
+            currentCount += increment;  // Incrementa o contador
+            watchingElement.textContent = currentCount;
+        }
+
+        // Incrementa o contador a cada 5 segundos
+        setInterval(incrementWatchingCount, 5000);
+
+        // Inicializa o contador imediatamente ao carregar a página
+        incrementWatchingCount();
+
+    </script>
+</body>
+
+</html>
