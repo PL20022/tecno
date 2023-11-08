@@ -19,7 +19,7 @@ function showReward() {
     setTimeout(() => {
         rewardElement.textContent = "";
         rewardElement.classList.remove('animated');
-    }, 1000);
+    }, 3000);
 
     likeCount++;
     updateLikeCount();
