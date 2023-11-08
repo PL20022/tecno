@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia Lupus</title>
+    <title>Nome do produto</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -206,10 +206,24 @@
         }
 
 
-          @keyframes rewardAnimation {
-            0% { opacity: 0; transform: translate(-50%, -60%); font-size: 30px; }
-            50% { opacity: 1; font-size: 60px; }
-            100% { opacity: 0; transform: translate(-50%, -40%); font-size: 30px; }
+        @keyframes bounce {
+
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+                font-size: 30px;
+            }
+
+            50% {
+                opacity: 1;
+                font-size: 60px;
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+                font-size: 30px;
+            }
         }
 
         .message {
@@ -222,7 +236,7 @@
 
 <body>
     <div class="header">
-        Tecnologia Lupus
+        NOME PRODUTO
         <!--<div class="like-count">Likes: 0</div>-->
         <div class="wallet">
             Saldo: R$<span id="walletAmount">0</span>
