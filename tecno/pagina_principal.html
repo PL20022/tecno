@@ -103,15 +103,6 @@
             width: auto;
             padding: auto;
         }
-      .watching-counter {
-            font-size: 14px;
-            text-align: center;
-            margin-top: 20px;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-             display: none;  /* Esconde inicialmente */
-        
-        }
     </style>
 </head>
 
@@ -122,10 +113,10 @@
             style="color: white; padding: 10px; font-size: 20px; text-align: center; font-weight: bold; margin-left: 10px;">
             Esse vídeo sairá do ar em: <span id="countdown" style="color: orange;"></span>
         </div>
-
+        <div class="wallet ">Saldo R$<span id="walletAmount">0</span></div>
 
     </div>
-  <div id="vid_654bec9119fd3c0009947db5" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_654bec9119fd3c0009947db5" src="https://images.converteai.net/f1212f91-0870-4ed5-998a-3a360384a2e6/players/654bec9119fd3c0009947db5/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_654bec9119fd3c0009947db5" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_654bec9119fd3c0009947db5">var s=document.createElement("script");s.src="https://scripts.converteai.net/f1212f91-0870-4ed5-998a-3a360384a2e6/players/654bec9119fd3c0009947db5/player.js",s.async=!0,document.head.appendChild(s);</script>
+    <div id="vid_654bec9119fd3c0009947db5" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_654bec9119fd3c0009947db5" src="https://images.converteai.net/f1212f91-0870-4ed5-998a-3a360384a2e6/players/654bec9119fd3c0009947db5/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_654bec9119fd3c0009947db5" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_654bec9119fd3c0009947db5">var s=document.createElement("script");s.src="https://scripts.converteai.net/f1212f91-0870-4ed5-998a-3a360384a2e6/players/654bec9119fd3c0009947db5/player.js",s.async=!0,document.head.appendChild(s);</script>
     </div>
      
         </div>
@@ -141,6 +132,7 @@
         });
     })(jQuery);
 </script>
+
     <footer>
         <p>Todos os direitos reservados. <br>
             Termos de uso | Política de privacidade
@@ -152,10 +144,10 @@
         const walletAmountElement = document.getElementById("walletAmount");
 
         // Define o valor final desejado (R$ 117)
-        const targetAmount = 114;
+        const targetAmount = 117;
 
         // Define a velocidade com que o saldo aumenta (em centavos por iteração)
-        const incrementSpeed = 17;
+        const incrementSpeed = 10;
 
         // Função para animar o aumento do saldo até atingir o valor desejado
         function increaseWalletAmount() {
@@ -199,7 +191,7 @@
             }
         }, 1000);
 
-         // Variável para armazenar o número atual de pessoas assistindo
+        // Variável para armazenar o número atual de pessoas assistindo
         let currentCount = 1136;
 
         // Função para gerar um número aleatório entre min e max
@@ -212,7 +204,7 @@
         // Função para incrementar o número de pessoas assistindo
         function incrementWatchingCount() {
             const watchingElement = document.getElementById("watching-now");
-            const increment = getRandomInt(17,13,4);  // Gera um incremento aleatório entre 1 e 5
+            const increment = getRandomInt(17, 13, 4);  // Gera um incremento aleatório entre 1 e 5
             currentCount += increment;  // Incrementa o contador
             watchingElement.textContent = currentCount;
         }
@@ -222,21 +214,8 @@
 
         // Inicializa o contador imediatamente ao carregar a página
         incrementWatchingCount();
-   
-</script>
- <script>
-        // Função para mostrar o contador de visualizações
-        function showWatchingCounter() {
-            const watchingCounter = document.querySelector('.watching-counter');
-            watchingCounter.style.display = 'block';  // Mostra o contador
-            document.getElementById('watching-now').textContent = '100';  // Exemplo de número de pessoas assistindo
-        }
 
-        // Temporizador para mostrar o contador após 9 minutos (540000 milissegundos)
-        setTimeout(showWatchingCounter, 470000);
     </script>
-
-
 </body>
 
 </html>
