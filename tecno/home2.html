@@ -176,30 +176,36 @@
         }
 
         .reward {
+          .reward {
             color: gold;
+            position: fixed;
             top: 50%;
-            padding-left: 30%;
-            position: relative;
-            font-size: 24px;
-            /* Tamanho do texto maior */
-            animation: bounce 1s ease infinite;
-            /* Aplica a animação de salto infinitamente */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            padding: 10px;
+            animation: bounce 2s ease infinite;
+            z-index: 9999;
+            text-shadow: 2px 2px 4px #000000;
+            white-space: nowrap;
         }
+ @keyframes bounce {
 
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(45px);
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+                font-size: 30px;
             }
 
+            50% {
+                opacity: 1;
+                font-size: 60px;
+            }
 
-
-            95% {
-                transform: translateY(-40px);
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+                font-size: 30px;
             }
         }
 
