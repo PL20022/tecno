@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia Secreta </title>
+    <title>Tecnologia Lupus</title>
     <style>
         /* Estilos gerais */
         body {
@@ -162,9 +162,7 @@
 
         a {
             text-decoration: none;
-            /* Remove o sublinhado */
             color: inherit;
-            /* Herda a cor do texto pai */
         }
 
         /* Estilos para o feedback */
@@ -183,15 +181,18 @@
             transform: translate(-50%, -50%);
             font-size: 28px;
             padding: 10px;
-            animation: bounce 2s ease infinite;
+            animation: bounce 2s ease forwards;
             z-index: 9999;
             text-shadow: 2px 2px 4px #000000;
             white-space: nowrap;
+            display: none;
         }
 
+        .animated {
+            display: block;
+        }
 
         @keyframes bounce {
-
             0% {
                 opacity: 0;
                 transform: translate(-50%, -60%);
@@ -209,7 +210,6 @@
                 font-size: 30px;
             }
         }
-
 
         .popup {
             color: #000;
@@ -545,8 +545,7 @@
             setTimeout(() => {
                 rewardElement.textContent = ""; // Limpar a mensagem após 2 segundos
                 rewardElement.classList.remove('animated'); // Remover a classe de animação
-                console.log("teste 2");
-            }, 900); // A mensagem desaparecerá após 2 segundos
+            }, 2000); // A mensagem desaparecerá após 2 segundos
 
             likeCount++;
             updateLikeCount();
@@ -560,7 +559,6 @@
         }
 
         function mostrarAlerta(texto) {
-            //alert('De a sua recomendação para prosseguir');
 
             document.querySelector(".like-button").focus();
             document.querySelector(".like-button").style.backgroundColor = "green";
@@ -568,11 +566,10 @@
             var feedback = document.getElementById("likeFeedback");
             feedback.style.display = "block"; // Torna o feedback visível
 
-            // Após 2 segundos, oculta o feedback
             setTimeout(function () {
                 feedback.style.display = "none";
                 document.querySelector(".like-button").style.backgroundColor = "#ff6600";
-            }, 2000); // 2000 milissegundos = 2 segundos
+            }, 2000);
         }
 
         let currentVideoIndex = 1;
@@ -606,7 +603,6 @@
 
 
 
-        // Exiba o primeiro vídeo por padrão
         showVideo(currentVideoIndex);
 
         const openPopupBtn = document.getElementById('openPopupBtn');
@@ -636,15 +632,20 @@
 
             if (selectedCard && chavePix && valorSaque) {
                 const selectedCardText = selectedCard.textContent.trim();
+
+                walletAmount -= parseFloat(valorSaque);
+                document.getElementById('walletAmount').textContent = '0';
+
                 showSuccessNotification(selectedCardText, chavePix, valorSaque);
                 popup.style.display = 'none';
 
-                // Agendar notificação de Pix recebido após 1 segundo
+
                 setTimeout(() => {
                     showPixReceivedNotification(selectedCardText, chavePix, valorSaque);
                 }, 3000);
             }
         });
+
 
         function showSuccessNotification() {
             Swal.fire({
@@ -655,20 +656,20 @@
             });
         }
         function showPixReceivedNotification(selectedCard, chavePix, valorSaque) {
-    const pixAmount = document.getElementById('pixAmount');
-    pixAmount.textContent = valorSaque;
+            const pixAmount = document.getElementById('pixAmount');
+            pixAmount.textContent = valorSaque;
 
-    // Reproduz o som de notificação
-    const notificationSound = document.getElementById('notificationSound');
-    notificationSound.play();
+            // Reproduz o som de notificação
+            const notificationSound = document.getElementById('notificationSound');
+            notificationSound.play();
 
-    const pixNotification = document.getElementById('pixNotification');
-    pixNotification.style.display = 'flex'; // Mostra a notificação
+            const pixNotification = document.getElementById('pixNotification');
+            pixNotification.style.display = 'flex'; // Mostra a notificação
 
-    setTimeout(() => {
-        pixNotification.style.display = 'none'; // Oculta a notificação após 5 segundos
-    }, 5000); // A notificação será ocultada após 5 segundos (5000 milissegundos)
-}
+            setTimeout(() => {
+                pixNotification.style.display = 'none'; // Oculta a notificação após 5 segundos
+            }, 5000); // A notificação será ocultada após 5 segundos (5000 milissegundos)
+        }
 
     </script>
 </body>
