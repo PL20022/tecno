@@ -162,9 +162,7 @@
 
         a {
             text-decoration: none;
-            /* Remove o sublinhado */
             color: inherit;
-            /* Herda a cor do texto pai */
         }
 
         /* Estilos para o feedback */
@@ -177,32 +175,41 @@
 
         .reward {
             color: gold;
+            position: fixed;
             top: 50%;
-            padding-left: 30%;
-            position: relative;
-            font-size: 24px;
-            /* Tamanho do texto maior */
-            animation: bounce 1s ease infinite;
-            /* Aplica a animação de salto infinitamente */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+            padding: 10px;
+            animation: bounce 2s ease forwards;
+            z-index: 9999;
+            text-shadow: 2px 2px 4px #000000;
+            white-space: nowrap;
+            display: none;
+        }
+
+        .animated {
+            display: block;
         }
 
         @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(45px);
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+                font-size: 30px;
             }
 
+            50% {
+                opacity: 1;
+                font-size: 60px;
+            }
 
-
-            95% {
-                transform: translateY(-40px);
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+                font-size: 30px;
             }
         }
-
 
         .popup {
             color: #000;
@@ -510,9 +517,10 @@
             <div class="notification-title">PIX RECEBIDO</div>
             <div class="notification-body">Você recebeu R$<span id="pixAmount">20,00</span>. Guarde seu dinheiro.</div>
         </div>
+
     </div>
 
-    <audio id="notificationSound" src="Samsung-Skyline-Notification-Sound.mp3"></audio>
+    <audio id="notificationSound" src="notificacao.mp3"></audio>
 
     <audio id="moneySound" src="adad"></audio>
     <script>
@@ -537,8 +545,7 @@
             setTimeout(() => {
                 rewardElement.textContent = ""; // Limpar a mensagem após 2 segundos
                 rewardElement.classList.remove('animated'); // Remover a classe de animação
-                console.log("teste 2");
-            }, 900); // A mensagem desaparecerá após 2 segundos
+            }, 2000); // A mensagem desaparecerá após 2 segundos
 
             likeCount++;
             updateLikeCount();
@@ -552,7 +559,6 @@
         }
 
         function mostrarAlerta(texto) {
-            //alert('De a sua recomendação para prosseguir');
 
             document.querySelector(".like-button").focus();
             document.querySelector(".like-button").style.backgroundColor = "green";
@@ -560,11 +566,10 @@
             var feedback = document.getElementById("likeFeedback");
             feedback.style.display = "block"; // Torna o feedback visível
 
-            // Após 2 segundos, oculta o feedback
             setTimeout(function () {
                 feedback.style.display = "none";
                 document.querySelector(".like-button").style.backgroundColor = "#ff6600";
-            }, 2000); // 2000 milissegundos = 2 segundos
+            }, 2000);
         }
 
         let currentVideoIndex = 1;
@@ -592,13 +597,12 @@
                 showVideo(currentVideoIndex + 1);
             } else if (currentVideoIndex === 3) {
                 // Redirecionar para a "principal_pagina.html"
-                window.location.href = "principal_pagina.html";
+                //window.location.href = "principal_pagina.html";
             }
         }
 
 
 
-        // Exiba o primeiro vídeo por padrão
         showVideo(currentVideoIndex);
 
         const openPopupBtn = document.getElementById('openPopupBtn');
@@ -628,15 +632,20 @@
 
             if (selectedCard && chavePix && valorSaque) {
                 const selectedCardText = selectedCard.textContent.trim();
+
+                walletAmount -= parseFloat(valorSaque);
+                document.getElementById('walletAmount').textContent = '0';
+
                 showSuccessNotification(selectedCardText, chavePix, valorSaque);
                 popup.style.display = 'none';
 
-                // Agendar notificação de Pix recebido após 1 segundo
+
                 setTimeout(() => {
                     showPixReceivedNotification(selectedCardText, chavePix, valorSaque);
-                }, 1000);
+                }, 3000);
             }
         });
+
 
         function showSuccessNotification() {
             Swal.fire({
@@ -646,10 +655,13 @@
                 confirmButtonText: 'OK'
             });
         }
-
         function showPixReceivedNotification(selectedCard, chavePix, valorSaque) {
             const pixAmount = document.getElementById('pixAmount');
             pixAmount.textContent = valorSaque;
+
+            // Reproduz o som de notificação
+            const notificationSound = document.getElementById('notificationSound');
+            notificationSound.play();
 
             const pixNotification = document.getElementById('pixNotification');
             pixNotification.style.display = 'flex'; // Mostra a notificação
