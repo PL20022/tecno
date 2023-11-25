@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologia Secreta</title>
+    <title>Tecnologia Lupus</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,22 +19,129 @@
 
 
 
+       
+
         @media (max-width: 768px) {
             .popup-content {
                 width: 90%;
             }
+            body {
+                margin: 0% !important;
+                overflow-x: hidden !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center !important;
+            }
+
+            .header {
+                width: 100% !important;
+                padding: 10px 0px !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                z-index: 1000;
+                justify-content: center !important;
+                gap: 10px !important;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px !important;
+                width: 60% !important;
+                box-sizing: border-box !important;
+                align-items: center;
+            }
+
+            .menu-item {
+                font-size: 10px !important;
+                text-align: center;
+
+            }
+
+            .menu-icon {
+                font-size: 10px !important;
+            }
+
+
+
+
         }
 
-        @media (max-width: 480px) {
+
+        @media (max-width: 310px) {
+            body {
+                margin: 0% !important;
+                overflow-x: hidden !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center !important;
+            }
 
 
             .container {
-                margin-left: 60px;
-                margin-right: 60px;
-                max-width: 0%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 90px !important;
+                width: 60% !important;
+                box-sizing: border-box !important;
+                align-items: center !important;
+            }
+
+
+            .menu-item {
+                font-size: 10px !important;
+                text-align: center;
+
+            }
+
+            .menu-icon {
+                font-size: 10px !important;
+            }
+
+
+            .header {
+                width: 100% !important;
+                padding: 10px 0px !important;
+                padding-left: 6px !important;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                z-index: 1000;
+                justify-content: center !important;
+                gap: 10px !important;
+            }
+
+            .arrow {
+                width: 20px !important;
+                height: 20px !important;
+            }
+
+
+            .left-arrow {
+                left: -30px !important;
+            }
+
+            .right-arrow {
+                right: -30px !important;
+            }
+
+            .bottom-menu {
+                justify-content: center !important;
+                gap: 10px !important;
+            }
+
+            .wallet {
+                font-size: 12px !important;
+
             }
 
         }
+
+
+
 
         /* Cabeçalho */
         .header {
@@ -201,7 +308,6 @@
             padding: 10px;
             animation: bounce 2s ease infinite;
             z-index: 9999;
-            text-shadow: 2px 2px 4px #000000;
             white-space: nowrap;
         }
 
@@ -236,7 +342,7 @@
 
 <body>
     <div class="header">
-        Tecnologia Lupus
+        NOME PRODUTO
         <!--<div class="like-count">Likes: 0</div>-->
         <div class="wallet">
             Saldo: R$<span id="walletAmount">0</span>
