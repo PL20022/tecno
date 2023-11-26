@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Parabéns! Você está pronto para mudar de vida!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #ff0000;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: #c70000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parabéns! Você está pronto para mudar de vida!</h1>
+        <p>O acesso à sua área de membros chegou em seu e-mail!</p>
+        <p>Acesse seu e-mail, abra o e-mail do "SEU ACESSO AQUI" e clique no botão abaixo para acessar sua área de membros:</p>
+      
+        <p>Coloque TUDO EM PRÁTICA!</p>
+    </div>
+    
+</body>
+</html>
