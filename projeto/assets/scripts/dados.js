@@ -1,7 +1,7 @@
 const dados = [
   {
     id: 1, // número de identificação do vídeo, sempre acrescentar +1 quando criar um novo objeto
-    video: "-11_macaco.mp4", //nome do video, deve ser igual ao nome do arquivo na pasta videos
+    video: "video_01.mp4", //nome do video, deve ser igual ao nome do arquivo na pasta videos
     valor_premio: 34.7, //valor do premio em dinheiro  que aparece na tela
 
     //perguntas que aparecem na entrevista, nao mudar estrutura e sempre escrever entre
@@ -14,7 +14,7 @@ const dados = [
 
   {
     id: 2,
-    video: "-21_apartamento.mp4",
+    video: "video_02.mp4",
     valor_premio: 38.0,
 
     pergunta1: "O vídeo é sobre imoveis"
@@ -24,7 +24,7 @@ const dados = [
 
   {
     id: 3,
-    video: "-28.mp4",
+    video: "video_03.mp4",
     valor_premio: 46,
 
     pergunta1: "O vídeo é sobre animais?",
