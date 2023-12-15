@@ -17,7 +17,7 @@ const dados = [
     video: "-21_apartamento.mp4",
     valor_premio: 38.0,
 
-    pergunta1: "O vídeo é sobre imoveis
+    pergunta1: "O vídeo é sobre imoveis"
     pergunta2: "E de um apartamento?",
     pergunta3: "custa mais de R$600 reais?",
   },
