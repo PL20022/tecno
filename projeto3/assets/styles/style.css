@@ -1,0 +1,483 @@
+/* Estilos gerais */
+html {
+  zoom: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Cabeçalho */
+.header {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Contêiner de vídeo */
+.container {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+.video{
+  display: block;
+  transform: scale(1,1);
+  transition: .3s ease opacity,.3s ease transform;
+
+
+  transform-origin: top;
+}
+
+.video video {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+
+
+}
+
+/* Informações do vídeo */
+.info {
+  padding: 10px;
+  background-color: #222;
+  text-align: center;
+}
+
+.username {
+  font-weight: bold;
+}
+
+/* Setas de navegação */
+
+/* Menu inferior */
+.bottom-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ff6600;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 2px solid #fff;
+}
+
+.menu-item {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+.menu-icon {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos para o feedback */
+.feedback {
+  display: none;
+  /* Oculta por padrão */
+  color: red;
+  font-size: 14px;
+}
+
+.reward {
+  color: gold;
+  position: fixed;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  padding: 10px;
+  animation: bounce 2s ease forwards;
+  z-index: 9999;
+  text-shadow: 2px 2px 4px #000000;
+  white-space: nowrap;
+  display: none;
+}
+
+.animated {
+  display: block;
+}
+
+@keyframes bounce {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+    font-size: 30px;
+  }
+
+  50% {
+    opacity: 1;
+    font-size: 60px;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+    font-size: 30px;
+  }
+}
+
+.popup {
+  color: #000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  /* Largura da popup */
+  max-width: 400px;
+  /* Largura máxima da popup */
+}
+
+/* Estilos para os cartões na popup */
+.cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  flex-direction: wrap;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 4px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Adicione media queries para tornar a popup responsiva */
+@media (max-width: 768px) {
+  .popup-content {
+    width: 90%;
+    /* Reduza a largura da popup para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    width: 90%;
+    /* Reduza ainda mais a largura da popup para telas muito pequenas */
+  }
+
+  .cards {
+    flex-direction: wrap;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* Empilhe os cartões verticalmente em telas pequenas */
+  }
+
+  .card {
+    width: 50px;
+    height: 20px;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    /* Largura total para os cartões em telas pequenas */
+  }
+}
+
+.card.selected {
+  background-color: #e9820d;
+  color: white;
+}
+
+input,
+#sacarBtn {
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 20px);
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#sacarBtn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#sacarBtn:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para o retângulo de notificação */
+.notification {
+  display: none;
+  /* Inicialmente, a notificação não será exibida */
+  flex-direction: row;
+  /* Organiza os elementos lado a lado */
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  /* Centraliza horizontalmente */
+  transform: translateX(-50%);
+  /* Ajuste para centralizar */
+  width: 300px;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #f1f1f1;
+  color: #000;
+  /* Cor da fonte */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1000;
+  /* Mantém acima de outros elementos */
+  transition: top 0.3s;
+  display: none;
+}
+
+.notification img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  /* Espaço entre a imagem e o texto */
+}
+
+.notification-text {
+  flex-grow: 1;
+}
+
+.notification-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.notification-body {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@keyframes slideIn {
+  0% {
+    top: -60px;
+  }
+
+  100% {
+    top: 10px;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    top: 10px;
+  }
+
+  100% {
+    top: -60px;
+  }
+}
+
+.notification,
+.second-notification {
+  animation-duration: 0.5s;
+  /* meio segundo */
+  animation-fill-mode: forwards;
+}
+.popup-survey {
+  color: #fff;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content-header, .popup-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+}
+.popup-header h2{
+ margin-left: 10px;
+}
+.popup-content-header button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 24px;
+}
+.popup-header button {
+  position: relative;
+  background-color: transparent;
+  right: 0%; top:50%;
+  border: none;
+  font-weight: bold;
+  color: #000;
+  font-size: 18px;
+}
+
+.popup-survey-content {
+  background: #ff6600;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  /* Largura da popup-survey */
+  max-width: 400px;
+  margin:  0 20px;
+  /* Largura máxima da popup */
+}
+
+.popup-content-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content-body p{
+  font-size: 18px;
+  
+}
+
+.popup-content-body h3{
+  font-size: 18px;
+  margin-bottom: 0;
+  
+}
+.buttons-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background-color: #000;
+  }
+
+  .video video {
+    height: 95vh;
+
+    object-fit: contain;
+  }
+}
+
+
+.tooltip-bg {
+  background: #ffffff;
+  height: 36px;
+  border-radius: 15px;
+  min-width: 300px;
+  border: 1px solid black;
+}
+.tooltip-bg input {
+  border: none;
+  font-size: 16px;
+  width: 95%;
+  
+  text-align: center;
+  height: 20px;
+}
+
+.tip {
+  transform: rotate(-45deg);
+  background: #ffffff;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: -30px;
+  left: 97%;
+  border-top: none;
+  border-left:  none;
+  border-bottom:  1px solid black;
+  border-right:  1px solid black;
+}
+
+
+
+input:focus {
+  outline: none;
+}
+.btn {
+  background-color: #38883b; /* Green */
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:active{
+  opacity: 0.5;
+  transition: 0.2s;
+}
+.blue {background-color: #3D5AFE;} /* Blue */
+.red {background-color: #b51200;} /* Red */ 
+/*   <div style="display: flex; flex-direction: column;"> */
+
+.hidden {
+  display: none;
+  
+}
+
+.loading {
+  /* Adicione estilos de animação de loading conforme necessário */
+  color: #f1f1f1;
+  padding: 10px;
+
+}
+
