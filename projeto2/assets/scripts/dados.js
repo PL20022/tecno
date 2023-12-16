@@ -6,8 +6,8 @@ const dados = [
 
     //perguntas que aparecem na entrevista, nao mudar estrutura e sempre escrever entre
     //aspas duplas ("") e manter
-    pergunta1: "O vídeo é sobre futebol?",
-    pergunta2: "Nos primeiros 10 segundos tem gol?",
+    pergunta1: "O vídeo sao sobre marmota?",
+    pergunta2: "sao mais de 2?",
     pergunta3: "O vídeo é +18?",
   }, // isso aqui se chama "objeto", vc deve copiar tudo na área que
   //abre e fecha chaves ({}), senao o código não vai funcionar
