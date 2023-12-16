@@ -14,12 +14,12 @@ const dados = [
 
   {
     id: 2,
-    video: "video_02.mp4",
+    video: "-23_ufc.mp4",
     valor_premio: 38.0,
 
-    pergunta1: "O vídeo é sobre culinária?",
-    pergunta2: "O prato preparado é macarronada?",
-    pergunta3: "A receita é fácil de fazer?",
+    pergunta1: "O vídeo é sobre luta?",
+    pergunta2: "nos primeiros 3 segundos o cara desvia?",
+    pergunta3: "Tem nocaute?",
   },
 
   {
