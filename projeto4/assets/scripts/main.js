@@ -33,11 +33,7 @@ function showReward() {
       rewardElement.innerText = ""; // Limpar a mensagem após 2 segundos
       rewardElement.classList.remove("animated"); // Remover a classe de animação
 
-      alert(
-        `Soma dos valores: ${vvvvv} = ${walletAmount.toFixed(
-          2
-        )}\nNº de cliques: ${prizes}`
-      ); //APAGAR ESTA LINHA
+      
     }, 2000); // A mensagem desaparecerá após 2 segundos
 
     document.getElementById("reward-icon").style.visibility = "hidden";
