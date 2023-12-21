@@ -1,0 +1,271 @@
+/* Menu lateral  */
+.menu-container {
+  background-color: #222 !important;
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  right: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  z-index: 100;
+
+  border: 1px solid #ff6600;
+  background-color: #000;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 5px;
+
+  background-color: #ff6600;
+
+  transition-duration: 0.25s;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -12px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 12px;
+}
+
+.menu__box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  visibility: hidden;
+  top: 8%;
+  right: -100%;
+  z-index: 9;
+  width: 150px;
+
+  margin: 0;
+  margin-right: 10px;
+  padding: 30px;
+
+  list-style: none;
+
+  background-color: #333;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+
+  transition-duration: 0.25s;
+  border-radius: 15px;
+}
+
+.menu__item {
+  display: block;
+  padding: 12px 0;
+
+  color: #fff;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition-duration: 0.25s;
+}
+.menu__item:hover {
+  color: #ff6600;
+}
+.menu__item i {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Setas de navegação */
+.arrow {
+  position: absolute;
+
+  transform: translateY(-50%);
+  width: 100%;
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+
+  opacity: 0;
+  z-index: 1;
+}
+
+.left-arrow {
+  top: 50px;
+  height: 30%;
+}
+
+.right-arrow {
+  bottom: 0;
+  height: 30%;
+}
+.left-arrow:hover {
+  opacity: 1;
+  /*   background: rgba(0, 0, 0, 0.2); */
+}
+
+.right-arrow:hover {
+  opacity: 1;
+  /*   background: rgba(0, 0, 0, 0.2); */
+}
+
+.arrow i {
+  border: 2px solid #ff6600;
+  border-radius: 50%;
+  background-color: #ff6600;
+}
+/*Saldo */
+.wallet {
+  position: absolute;
+  width: 100%;
+  bottom: 20%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.wallet button {
+  background-color: #28a745;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 22px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  z-index: 999;
+}
+
+.wallet button:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.like-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 40%;
+  right: 37%;
+  z-index: 10;
+
+  text-align: center;
+}
+
+.like-buttons-container button {
+  color: #ff6600;
+  background-color: #fff;
+  padding: 5px;
+  border: 2px solid #ff6600;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: transform 0.2s;
+  font-size: 30px;
+}
+
+/* Botões de curtir e não recomendo */
+.like-button {
+  background-color: transparent;
+}
+
+.dislike-button {
+  background-color: red;
+}
+
+.like-button:active,
+.dislike-button:active {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+.like-button:hover,
+.dislike-button:hover {
+  transform: scale(1.1);
+  opacity: 0.5;
+}
+
+#reward-icon {
+  position: absolute;
+  z-index: 9;
+  right: 35%;
+  bottom: 48%;
+  text-align: center;
+}
+
+#reward-icon button {
+  cursor: move;
+  z-index: 10;
+  background-color: transparent;
+  color: #fff;
+  width: 80px;
+  border: none;
+}
+
+#reward-icon img {
+  width: 100%;
+  /*   filter: invert(100%); */
+}
+@media screen and (max-width: 900px) {
+  .like-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 30%;
+    right: 5%;
+    z-index: 10;
+
+    text-align: center;
+  }
+
+  #reward-icon {
+    position: absolute;
+    z-index: 9;
+    right: 5%;
+    bottom: 48%;
+    text-align: center;
+  }
+}
