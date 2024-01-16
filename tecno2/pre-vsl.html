@@ -137,7 +137,18 @@
 <div class="button-container">
     <a href="https://omundoagora.site/tecno2/pagina_principal2.html" target="_blank">CLIQUE AQUI PARA VER O VÍDEO</a>
 </div>
-
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Certifique-se de incluir o jQuery -->
+    <script>
+        (function ($) {
+            $('a').each(function () {
+                let href = $(this).attr("href");
+                if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
+                let search_params = document.location.search.replace('?', '');
+                let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
+                $(this).attr("href", urlFinal);
+            });
+        })(jQuery);
+    </script>
 <footer>
     <p>Termos de uso</p> | <p>Política de privacidade</p>
 </footer>
