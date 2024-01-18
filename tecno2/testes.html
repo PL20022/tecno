@@ -30,18 +30,16 @@
              display: none;  /* Esconde inicialmente */
         
         }
-footer {
-  background-color: #333; /* define a cor de fundo do rodapé */
-  color: #222020; /* define a cor do texto */
-  text-align: center; /* centraliza o conteúdo */
+
+  body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-footer a {
-  color: #222020; /* define a cor dos links */
-}
 footer {
-position: fixed; /* ou 'absolute' */
-  bottom: 0;
+  margin-top: auto;
+ bottom: 0;
   left: 0;
   right: 0;
   background-color: #000;
@@ -49,6 +47,9 @@ position: fixed; /* ou 'absolute' */
   padding: 20px;
   text-align: center;
   font-size: 0.8em;
+}
+footer a {
+  color: #222020; /* define a cor dos links */
 }
 </style>
 <body>
