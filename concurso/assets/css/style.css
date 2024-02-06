@@ -1,0 +1,333 @@
+
+
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero1 {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #1B1B1B;
+  padding: 0;
+  
+  
+}
+
+#hero1 .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  
+ 
+}
+
+
+
+#hero1 h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#hero1 h1 {
+  color: #fff;
+  margin-bottom: 0px;
+  font-size: 33px;
+ 
+  min-width: 1000px;
+}
+
+@media (max-width: 720px){
+  #hero1 h1{
+    font-size: 20px;
+    min-width: 0;
+    
+  }
+}
+
+#hero1 h4 {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 25px;
+  
+}
+
+#hero1 p {
+  width: 80%;
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  color: #fff;
+}
+
+#hero1 .carousel-control-prev, #hero .carousel-control-next {
+  width: 10%;
+}
+
+#hero1 .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 48px;
+  line-height: 1;
+  width: auto;
+  height: auto;
+}
+
+#hero1 .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  
+  display: inline-block;
+  
+  
+  
+  padding: 20px 100px 20px 100px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: 10px;
+  color: rgb(0, 0, 0);
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  background-color: rgb(0, 255, 8);
+  border: 2px solid white;
+
+ 
+
+  margin-top: -5px;
+  transition: 0s;
+}
+
+#hero1 .btn-get-started:hover {
+  
+  color: black;
+  text-decoration: none;
+  transition: 0s;
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+@media (min-width: 1024px) {
+  #hero1 p {
+    width: 60%;
+  }
+  #hero1 .carousel-control-prev, #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero1 .carousel-container {
+    height: 1300px;
+    margin-top: 500px;
+  }
+
+  
+
+  #hero1 h2 {
+    font-size: 28px;
+  }
+
+  #hero1{
+    height: 700px;
+    padding-top: 500px !important;
+  }
+
+  #heroh1{
+    margin-top: 800px;
+  }
+
+  
+}
+
+
+#ytb2{
+  width: 55%;
+  height: 450px !important;
+  
+}
+
+
+
+
+@media (max-width: 720px){
+  #divex{
+    margin-top: -770px !important;
+  }
+
+  
+#ytb2{
+  width: 100%;
+  min-height: 250px !important;
+  
+}
+
+  #botao {
+    line-height: 20px !important;
+  }
+
+
+  #hero1 .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    
+    display: inline-block;
+    
+    
+    
+    padding: 20px 30px 20px 30px;
+
+  
+   
+  
+    margin-top: -5px;
+    transition: 0s;
+  }
+  
+  #protecao{
+    width: 89% !important;
+  }
+ 
+
+}
+
+
+#protecao{
+  width: 35%;
+}
+
+
+
+
+
+#youtube{
+  width: 1000px;
+  height: 600px;
+  
+  max-width: 120%;
+}
+
+
+@media (max-width: 720px){
+  #youtube{
+    width: 100%;
+    max-height: 200px;
+    
+  }
+}
+
+
+
+#divdovideo{
+  height:100%;
+  left:0;
+  position:absolute;
+  top:0;
+  width:100%;
+}
+
+@media (max-width: 720px){
+  #divdovideo{
+    margin-left: 0px;
+  }
+
+  #divdovideo2{
+    margin-left: 0x !important;
+  }
+}
+
+
+#divdovideo2{
+  padding:56.25% 0 0 0;
+  position:relative;
+}
+
+
+
+#h1zada{
+  min-width: 1000px;
+}
+
+@media (max-width: 720px){
+  #h1zada{
+    min-width: 0px;
+  }
+}
+
+
+
+
+#main1{
+  display: none;
+}
+
+
+
+
+@media (max-width: 720px){
+  #main1{
+    display: inline;
+  }
+
+  #error404{
+    display: none;
+  }
+}
+
+
+
+
+.botaozada {
+    
+  background-color: #11ff00;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  
+  
+
+
+
+  animation:pulse 0.6s infinite;
+  animation-direction: alternate;
+ -webkit-animation-name: teste;
+  animation-name: teste;
+
+
+
+
+ 
+}
+
+
+@-webkit-keyframes teste {
+  0% {
+    -webkit-transform: scale(1);
+    -webkit-filter: brightness(100%);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    -webkit-filter: brightness(200%);
+  }
+}
+
+@keyframes teste {
+  0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  100% {
+    transform: scale(1.1);
+    filter: brightness(200%);
+  }
+}
