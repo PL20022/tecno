@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Parabéns! Você está pronto para mudar de vida!</title>
+    <title>Parabéns! Você está pronto para mudar de vida e SER APROVADO</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,6 +40,35 @@
         .button:hover {
             background-color: #c70000;
         }
+        
+        .input-field, .submit-button {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+       
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            
+        }
+        
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+        
+        .pdf-container {
+            margin-top: 20px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +76,26 @@
         <h1>Parabéns! Você está pronto para mudar de vida!</h1>
         <p>O acesso à sua área de membros chegou em seu e-mail!</p>
         <p>Acesse seu e-mail, abra o e-mail do "SEU ACESSO AQUI" e clique no botão abaixo para acessar sua área de membros:</p>
-      
-        <p>Coloque TUDO EM PRÁTICA!</p>
+        <p>Coloque Seu @ do instagram abaixo para nossa equipe adicionar voce no instagram em até 24 horas. Voce recebera um email quando colocamos você! </p>
+        
+        <input type="text" id="instagramHandle" class="input-field" placeholder="@ do seu Instagram">
+        <button class="submit-button" onclick="sendMessage()">Enviar</button>
+        <p id="messageResponse"></p>
+        
+        <div class="pdf-container">
+            <iframe src="https://drive.google.com/file/d/1m0LQ3x1zhs73Gx4NdaZ8z8JbRMeeTc4V/preview" width="640" height="480" allow="autoplay"></iframe>
+        </div>
     </div>
     
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("instagramHandle").value;
+            if (message) {
+                document.getElementById("messageResponse").innerText = "Resposta enviada: " + message;
+            } else {
+                document.getElementById("messageResponse").innerText = "Por favor, insira seu @ do Instagram.";
+            }
+        }
+    </script>
 </body>
 </html>
